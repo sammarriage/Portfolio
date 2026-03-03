@@ -268,12 +268,21 @@ a:hover { color: var(--accent2); }
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .video-image-item {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
+  max-width: 100%;
+}
+
+.video-image-item img,
+.video-image-item video {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .skills-tab {
@@ -526,4 +535,10 @@ input:focus, textarea:focus {
   .nav-links.open { display: flex; }
   .nav-links a { padding: 10px 10px; border-radius: 12px; }
   .nav-links a:hover { background: rgba(255, 255, 255, 0.06); }
+
+  .video-image-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
 }
