@@ -547,19 +547,6 @@ input:focus, textarea:focus {
 
   .tag { font-size: 10.5px; padding: 4px 7px; }
 
-  /* Keep project summaries compact on mobile; full text appears when expanded */
-  .project-summary .muted {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-  }
-  .project.is-expanded .project-summary .muted {
-    display: block;
-    -webkit-line-clamp: unset;
-    overflow: visible;
-  }
-
   .nav-toggle { display: inline-flex; }
   .nav-links {
     display: none;
