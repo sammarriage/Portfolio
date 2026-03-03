@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Samuel Marriage | Engineering Portfolio</title>
+    <meta name="description" content="Engineering portfolio" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Background glow -->
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <!-- Top Nav -->
+    <header class="header">
+      <nav class="nav container" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="brand-text">Samuel Marriage</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+        </button>
+
+        <div id="navLinks" class="nav-links">
+          <a href="#">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a class="pill" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- About -->
+      <section id="about" class="about container">
+        <div class="about-left">
+          <p class="kicker">Samuel Marriage | Engineering Portfolio</p>
+          <h1 class="headline">
+           About <span class="accent">Me</span>
+          </h1>
+          <p class="subhead">
+            I have always had a desire to understand how things work, and learn how to create them for myself. 
+          </p>
+          <p class="subhead">
+            My journey into engineering began with <span class="accent">coding in school</span>, where I was able to bring my ideas to life 
+            through <span class="accent">logic and problem-solving</span>. While I definitely enjoyed this and found it rewarding, 
+            I felt my <span class="accent">imaginative and innovative side</span> was left <span class="accent">underexplored</span>.
+          </p>
+          <p class="subhead">
+            This is where I found my <span class="accent">love for robotics</span>. 
+            It gave me the opportunity to combine logical thinking with creativity; allowing me to see my code in <span class="accent">real and tangible systems</span>.
+          </p>
+
+          <div class="about-cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="https://github.com/sammarriage" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn ghost" href="./assets/downloadables/SamuelMarriage-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          </div>
+        </div>
+
+        <div class="card" aria-label="Profile card">
+          <h2 class="card__title">Quick Highlights</h2>
+          <ul class="bullets">
+            <li>Designed and built a <span class="accent">fully autonomous maze-solving robot</span> with closed-loop control and multi-sensor fusion</li>
+            <li>Developed 2 <span class="accent">real-time physics simulations</span> with stable multi-body collision handling</li>
+            <li>Member of the <span class="accent">York Engineering Society</span></li>
+            <li><span class="accent">Represented Computer Science</span> at Sixth Form open evenings, encouraging students to pursue STEM at GCSE</li>
+          </ul>
+
+          <div class="card__row">
+            <a class="accent" href="#contact">Get in touch &darr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section container">
+        <div class="section-head">
+          <h2>My Work</h2>
+          <p class="subhead">Relevant projects I have worked on over the years. Outlining the task, what I implemented, and the results.</p>
+        </div>
+
+        <div class="filters">
+          <button class="btn primary" data-filter="all">All</button>
+          <button class="btn ghost" data-filter="robotics">Robotics</button>
+          <button class="btn ghost" data-filter="embedded">Embedded</button>
+          <button class="btn ghost" data-filter="simulation">Simulation</button>
+        </div>
+
+        <div class="grid projects-grid">
+          <!-- Project 1 -->
+          <article class="card project" data-tags="robotics embedded">
+            <div class="project-summary">
+              <div class="project-top">
+                <h3>Autonomous Maze Solving Robot</h3>
+                <div class="project-tags">
+                  <span class="tag">Robotics</span>
+                  <span class="tag">Embedded C++</span>
+                  <span class="tag">Arduino</span>
+                </div>
+              </div>
+
+              <p class="muted">
+                A fully autonomous <span class="accent">differential-drive robot</span> with a <span class="accent">custom-built chassis</span>, using the <span class="accent">Arduino Nano 33 BLE</span> to <span class="accent">navigate unknown maze environments</span>.
+              </p>
+              <p class="muted">
+                Houses <span class="accent">4 infrared sensors</span>, <span class="accent">2 ultrasonic sensors</span>, <span class="accent">2 motors</span>, and a <span class="accent">custom-built battery pack holder</span>.
+              </p>
+            </div>
+
+            <div id="robot-expanded" class="project-expanded" role="region" aria-labelledby="robot-toggle" aria-hidden="true">
+              <div class="project-expanded-inner">
+                <h4>What was implemented</h4>
+                <ul class="bullets">
+                  <li>2 <span class="accent">custom laser-cut plates</span> capable of housing sensors, motors, the battery, and the microcontroller</li>
+                  <li>Multi-sensor fusion, using <span class="accent">4 IR sensors</span> (90° and 45°) and <span class="accent">2 ultrasonic sensors</span> (front and back) for obstacle detection</li>
+                  <li><span class="accent">Wheel odometry</span> using encoder interrupts to calculate <span class="accent">distance travelled and displacement</span></li>
+                  <li><span class="accent">Gyroscope bias calibration</span> and <span class="accent">closed-loop angle control</span> for precise turns</li>
+                  <li>Trigonometric wall-angle estimation using 45°/90° sensor comparison to <span class="accent">maintain parallel wall alignment</span></li>
+                  <li>Utilisation of <span class="accent">bluetooth</span> to stream data wirelessly for ease of debugging</li>
+                  <li><span class="accent">Finite state machine</span> controlling behaviours: drive, wall avoidance, repositioning, and turning</li>
+                </ul>
+
+                <h4>Results</h4>
+                <p>
+                  The robot <span class="accent">successfully navigated</span> both <span class="accent">known and unseen maze environments</span>, demonstrating reliable <span class="accent">autonomous obstacle avoidance</span>, <span class="accent">stable wall-following behaviour</span>, and accurate <span class="accent">gyroscope-corrected turning</span>. <br>
+                  Key strengths included consistent wall alignment, obstacle avoidance, and recalibration of the gyroscope before major turns to ensure <span class="accent">angular accuracy</span>.
+                </p>
+                <div class="video-image-container">
+                  <div class="video-image-item">
+                    <h4>Robot CAD Design</h4>
+                    <img src="https://pub-b5ff110375b24fe28cd845f2b69153f1.r2.dev/RobotDesign.jpg" width="400"> <br>
+                    <img src="https://pub-b5ff110375b24fe28cd845f2b69153f1.r2.dev/UpperPlateDesign.jpg" width="399"> <br>
+                    <img src="https://pub-b5ff110375b24fe28cd845f2b69153f1.r2.dev/BasePlateDesign.jpg" width="399"> 
+                  </div>
+                  <div class="video-image-item">
+                    <h4>Robot In Action</h4>
+                    <video width="500" controls autoplay muted loop>
+                      <source src="https://pub-b5ff110375b24fe28cd845f2b69153f1.r2.dev/RoboticsDemo.mp4" type="video/mp4">
+                      Your browser does not support the video.
+                    </video>
+                  </div>
+                </div>
+                <div class="footnote">
+                  <p>
+                    Work completed at the University Of York. Further resources (such as source code, schematics, or CAD files) may be available <a class="accent" href="#contact"><u>upon request</u></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="actions project-actions">
+              <a class="btn small" href="./assets/downloadables/RobotDesignImages.pdf" target="_blank" rel="noopener">Design Breakdown</a>
+              <button type="button" class="project-expand-btn accent" aria-expanded="false" aria-controls="robot-expanded" id="robot-toggle"> Expand ⇲ </button>
+            </div>
+
+            <div class="skills-tab"> 
+              <p><strong>Skills:</strong> Embedded C++ | Robotics | FSMs | Sensor Fusion | Wheel Odometry | Gyroscope Integration | Bluetooth Communication</p>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+           <article class="card project" data-tags="simulation">
+            <div class="project-summary">
+              <div class="project-top">
+                <h3>FollowerFeuds</h3>
+                <div class="project-tags">
+                  <span class="tag">Simulation</span>
+                  <span class="tag">Python</span>
+                </div>
+              </div>
+
+              <p class="muted">
+                A BeyBlade-style game implementing a <span class="accent">real-time 2D physics simulation</span> built in <span class="accent">Python</span>, attracting <span class="accent">500+ daily users</span> on TikTok.
+              </p>
+              <p class="muted">
+                Implements <span class="accent">rigid-body motion</span>, <span class="accent">collision detection</span>, and 
+                <span class="accent">momentum transfer</span>. Using a modular state-driven architecture, capable of handling <span class="accent">continuous real-time updates</span>.
+              </p>
+            </div>
+
+            <div id="beyblade-expanded" class="project-expanded" role="region" aria-labelledby="beyblade-toggle" aria-hidden="true">
+              <div class="project-expanded-inner">
+                <h4>What was implemented</h4>
+                <ul class="bullets">
+                  <li>A <span class="accent">rigid-body 2D physics engine</span> with velocity, mass, and collisions with overlap prevention</li>
+                  <li>Momentum exchange using <span class="accent">tangent/normal vector decomposition</span> to conserve momentum while preserving <span class="accent">tangential velocity</span></li>
+                  <li>A hierarchical <span class="accent">state-based logic architecture</span> managing simulation phases</li>
+                  <li>4 roles which each player has a chance of selecting: <br> 
+                    <span class="accent">None:</span> Default role (70%) <br> 
+                    <span class="accent">Venom:</span> Deal a tick damage after every hit (10%) <br> 
+                    <span class="accent">Clone:</span> Once falling beneath 50 health, spawn in a clone of yourself with both instances getting 30 health (10%) <br> 
+                    <span class="accent">Glitch:</span> 3 opportunities to dodge dagger attacks (10%)</li>
+                  <li>3 randomly spawning items that players are able to interact with: <br> 
+                    <span class="accent">Health Pack:</span> Boosts a players health by 5 points (caps at 100) <br> 
+                    <span class="accent">Shield:</span> Temporarily blocks a player from taking damage from opponents, can be broken early if hit by a dagger<br> 
+                    <span class="accent">Dagger:</span> Boosts collision damage from 1-3 points to 15-25 points<br> 
+                  <li><span class="accent">Modular design</span> enabling easy addition of new mechanics, arenas, and gameplay modifiers</li>
+                </ul>
+
+                <h4>Results</h4>
+                <p>
+                  The final system delivered <span class="accent">stable multi-body dynamics</span> with consistent physics. The engine maintained stability during high-speed impacts and multi-object collisions, 
+                  demonstrating reliable <span class="accent">momentum conservation</span>.<br>
+                  Posting daily videos of gameplay on TikTok, the project reached <span class="accent">500+ daily users</span> as of March 2026. Validating both the performance of the project and user engagement.
+                </p>
+
+                <div class="video-image-container">
+                  <div class="video-image-item">
+                    <h4>Gameplay Demo</h4>
+                    <video width="600" controls autoplay muted loop>
+                      <source src="https://pub-b5ff110375b24fe28cd845f2b69153f1.r2.dev/FollowerFeuds.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+
+                <div class="footnote">
+                  <p>
+                    Independent project. Further resources (such as source code, schematics, or CAD files) may be available <a class="accent" href="#contact"><u>upon request</u></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="actions project-actions">
+              <a class="btn small" href="https://github.com/sammarriage/FollowerFeuds" target="_blank" rel="noopener">Repo</a>
+              <a class="btn small ghost" href="https://www.tiktok.com/@followerfeuds" target="_blank" rel="noopener">Tiktok</a>
+              <button type="button" class="project-expand-btn accent" aria-expanded="false" aria-controls="beyblade-expanded" id="beyblade-toggle"> Expand ⇲ </button>
+            </div>
+
+            <div class="skills-tab"> 
+              <p><strong>Skills:</strong> Physics Simulation | Real-Time Systems | Collision Detection | State Machines | Game Architecture</p>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card project" data-tags="simulation">
+            <div class="project-summary">
+              <div class="project-top">
+                <h3>Flocking Simulator</h3>
+                <div class="project-tags">
+                  <span class="tag">Simulation</span>
+                  <span class="tag">Java</span>
+                </div>
+              </div>
+
+              <p class="muted">
+                Real-time flocking simulation in <span class="accent">Java</span>, applying <span class="accent">object-oriented programming</span> principles to simulate emergent flocking behaviour in <span class="accent">autonomous boids</span>.
+              </p>
+              <p class="muted">
+                Each boid follows rules for <span class="accent">cohesion</span>, <span class="accent">alignment</span>, and <span class="accent">separation</span>, whilst maintaining <span class="accent">avoidance of static obstacles</span> on a 2D canvas.
+              </p>
+            </div>
+
+            <div id="flock-expanded" class="project-expanded" role="region" aria-labelledby="flock-toggle" aria-hidden="true">
+              <div class="project-expanded-inner">
+                <h4>What was implemented</h4>
+                <ul class="bullets">
+                  <li>Implementation of core flocking rules: <span class="accent">separation</span>, <span class="accent">alignment</span>, and <span class="accent">cohesion</span> to produce <span class="accent">emergent behaviour</span></li>
+                  <li>Neighbour detection using <span class="accent">distance-based filtering</span>  and <span class="accent">spatial partitioning</span> to significantly reduce computational complexity</li>
+                  <li>Functional obstacle avoidance based on <span class="accent">geometric calculations</span> and <span class="accent">collision prevention logic</span></li>
+                  <li>Efficient <span class="accent">object-oriented architecture</span> using <span class="accent">inheritance</span>, <span class="accent">composition</span>, and <span class="accent">interfaces</span></li>
+                  <li>Customisable simulation controls through a <span class="accent">GUI</span>, allowing users to adjust boid behaviour <span class="accent">dynamically</span></li>
+                </ul>
+                <h4>Results</h4>
+                <p>
+                  The final result includes a fully working <span class="accent">interactive flocking simulation</span> with a <span class="accent">clear GUI</span>, working controls, and visual accuracy. <br>
+                  Key strengths of my project included a responsive reset/disable feature, dynamic visual feedback where boids became greener as flocking strength increased, 
+                  clean and reliable execution, and a <span class="accent">well-structured</span> object-oriented design.
+                </p>
+                <div class="video-image-container">
+                  <div class="video-image-item">
+                    <h4>Demo</h4>
+                    <video width="600" controls autoplay muted loop>
+                      <source src="https://pub-b5ff110375b24fe28cd845f2b69153f1.r2.dev/FlockingDemo.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+                <div class="footnote">
+                  <p>
+                    Work completed at the University Of York. Further resources (such as source code, schematics, or CAD files) may be available <a class="accent" href="#contact"><u>upon request</u></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="actions project-actions">
+              <a class="btn small" href="./assets/downloadables/FlockingApp.jar" target="_blank" rel="noopener">Try it!</a>
+              <a class="btn small ghost" href="./assets/downloadables/FlockingReport.pdf" target="_blank" rel="noopener">Write Up</a>
+              <button type="button" class="project-expand-btn accent" aria-expanded="false" aria-controls="flock-expanded" id="flock-toggle"> Expand ⇲ </button>
+            </div>
+            <div class="skills-tab"> 
+              <p><strong>Skills:</strong> Java | Object-Oriented Design | GUI Development | Real-Time Systems | Collision Detection | Simulation</p>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="card project" data-tags="simulation">
+            <div class="project-summary">
+              <div class="project-top">
+                <h3>Parameterisable Processor</h3>
+                <div class="project-tags">
+                  <span class="tag">Simulation</span>
+                  <span class="tag">VHDL</span>
+                </div>
+              </div>
+
+              <p class="muted">
+                A <span class="accent">parameterisable processor datapath</span> in <span class="accent">VHDL</span>, built to be reusable, and simulated within Vivado 2023.2.
+              </p>
+              <p class="muted">
+                <span class="accent">Modular components</span> including an <span class="accent">ALU</span>, <span class="accent">register bank</span>, and <span class="accent">control logic</span> are used to execute a custom single-cycle multiplication routine.
+              </p>
+            </div>
+
+            <div id="cpu-expanded" class="project-expanded" role="region" aria-labelledby="cpu-toggle" aria-hidden="true">
+              <div class="project-expanded-inner">
+                <h4>What was implemented</h4>
+                <ul class="bullets">
+                  <li>A <span class="accent">parameterisable ALU</span> supporting <span class="accent">signed arithmetic</span>, <span class="accent">bitwise logic</span>, and <span class="accent">shift/rotate operations</span></li>
+                  <li>Comprehensive <span class="accent">flag generation</span> including overflow detection</li>
+                  <li>A <span class="accent">dual-read, single-write register bank</span> built using <span class="accent">for-generate constructs</span> and <span class="accent">synchronous reset D flip-flops</span></li>
+                  <li>Custom <span class="accent">multiplexer-based selection logic</span></li>
+                  <li>A complete <span class="accent">datapath architecture</span> and <span class="accent">FSM-based control unit</span> capable of executing an <span class="accent">8-bit multiplication algorithm</span> using 16-bit operations</li>
+                  <li><span class="accent">Self-checking testbenches</span> using <span class="accent">assert/report mechanisms</span></li>
+                  <li><span class="accent">RTL schematics</span> and <span class="accent">synthesis reports</span> confirming hardware structure and implementation</li>
+                </ul>
+                <h4>Results</h4>
+                <p>
+                  The final system demonstrated correct multiplication functionality across <span class="accent">multiple test cases</span>, with simulation waveforms clearly showing <span class="accent">accurate data propagation</span>, <span class="accent">state transitions</span>, and <span class="accent">control signal generation</span>. <br>
+                  Key strengths of this project included a strongly modular design, robust test methodology, and clear documentation.
+                </p>
+                <div class="video-image-container">
+                  <div class="video-image-item">
+                    <h4>Schematic</h4>
+                    <video width="500" controls autoplay muted loop>
+                      <source src="https://pub-b5ff110375b24fe28cd845f2b69153f1.r2.dev/ProcessorSchematic.mp4" type="video/mp4">
+                      Your browser does not support the video.
+                    </video>
+                  </div>
+                  <div class="video-image-item">
+                    <h4>Testbench</h4>
+                    <video width="500" controls autoplay muted loop>
+                      <source src="https://pub-b5ff110375b24fe28cd845f2b69153f1.r2.dev/ProcessorTestbench.mp4" type="video/mp4">
+                      Your browser does not support the video.
+                    </video>
+                  </div>
+                </div>
+                <div class="footnote">
+                  <p>
+                    Work completed at the University Of York. Further resources (such as source code, schematics, or CAD files) may be available <a class="accent" href="#contact"><u>upon request</u></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="actions project-actions">
+              <a class="btn small" href="./assets/downloadables/ProcessorBreakdown.pdf" target="_blank" rel="noopener">Write Up</a>
+              <button type="button" class="project-expand-btn accent" aria-expanded="false" aria-controls="cpu-expanded" id="cpu-toggle"> Expand ⇲ </button>
+            </div>
+            <div class="skills-tab"> 
+              <p><strong>Skills:</strong> VHDL | Digital Logic Design | FSMs | Parameterisation | Vivado | Simulation | Hardware Verification</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- More -->
+        <div class="callout">
+          <div>
+            <h3>Want more?</h3>
+            <p class="muted">Public Repos can be found on my GitHub, further information / private repos may be available upon request.</p>
+          </div>
+          <div class="callout-buttons">
+            <a class="btn" href="https://github.com/sammarriage" target="_blank" rel="noopener">Public Repos</a>
+            <a class="btn" href="#contact">Contact</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section container">
+        <div class="section-head">
+          <h2>Skills</h2>
+        </div>
+
+        <div class="grid skills-grid">
+          <div class="card">
+            <h3>Programming Languages</h3>
+            <ul class="chips">
+              <li>C++</li><li>Python</li><li>Java</li><li>VHDL</li><li>MATLAB</li><li>SQL</li><li>HTML5</li><li>CSS</li><li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Libraries/Frameworks</h3>
+            <ul class="chips">
+              <li>ROS2</li><li>Pygame</li><li>Java AWT</li><li>ArduinoBLE</li><li>mbed</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Software/Tools</h3>
+            <ul class="chips">
+              <li>Visual Studio</li><li>ArduinoIDE</li><li>STM32CubeIDE</li><li>PyScripter</li><li>Eclipse</li><li>Vivado</li><li>LTSpice</li><li>Autodesk Inventor</li><li>Fusion360</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section container">
+        <div class="section-head">
+          <h2>Experience</h2>
+        </div>
+
+        <div class="stack">
+          <article class="card timeline">
+            <div class="timeline-head">
+              <div class="timeline-head-row">
+                <h3>Student</h3>
+                <span class="muted">Sept 2023 - July 2026</span>
+              </div>
+              <p class="muted">University of York - York, UK</p>
+            </div>
+            <ul class="bullets">
+              <li>Member of <span class="accent">York Engineering Society</span></li>
+              <li>Relevant Coursework: Quadruped Robot Dissertation Project | Robotics Design & Construction | Advanced Sensors & Instrumentation | Control, Sensors, & Instrumentation</li>
+            </ul>
+          </article>
+
+          <article class="card timeline">
+            <div class="timeline-head">
+              <div class="timeline-head-row">
+                <h3>Engineering Intern</h3>
+                <span class="muted">July 2022</span>
+              </div>
+              <p class="muted">Ocado - Hatfield, UK</p>
+            </div>
+            <ul class="bullets">
+              <li>Completed an engineering experience placement, working with various <span class="accent">software, simulation, and deployment teams</span>, gaining insight into 
+              <span class="accent">engineering workflows, code review processes, and system integration</span> in a large scale environment.</li>
+            </ul>
+          </article>
+
+          <article class="card timeline">
+            <div class="timeline-head">
+              <div class="timeline-head-row">
+                <h3>Computer Science Assistant</h3>
+                <span class="muted">Sept 2022 - July 2023</span>
+              </div>
+              <p class="muted">Goffs Academy - Cheshunt, UK</p>
+            </div>
+            <ul class="bullets">
+              <li>Assisted teaching <span class="accent">20+ GCSE Students</span>, increasing understanding of <span class="accent">Python</span> and <span class="accent">Computing Theory</span>, 
+              leading to improved exam scores.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section container">
+        <div class="section-head">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="grid contact-grid">
+          
+          <!-- Main Contact Card -->
+          <div class="card">
+            <h3 class="card__title">Get in Touch</h3>
+
+            <p class="muted">
+              The fastest way to reach me is via email: <span class="accent">samuel.marriage@icloud.com</span>
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="actions">
+              <a class="btn primary" href="mailto:samuel.marriage@icloud.com?subject=Portfolio%20Enquiry" onclick="navigator.clipboard.writeText('samuel.marriage@icloud.com'); alert('Email copied to clipboard');"> Email Me </a>
+              <a class="btn ghost" href="https://www.linkedin.com/in/sammarriage" target="_blank" rel="noopener"> LinkedIn </a>
+              <a class="btn ghost" href="https://github.com/sammarriage" target="_blank" rel="noopener"> GitHub </a>
+            </div>
+          </div>
+
+          <!-- CV Card -->
+          <div class="card">
+            <h3 class="card__title">CV</h3>
+
+            <p class="muted">
+              Download my CV below.
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="actions">
+              <a class="btn" href="./assets/downloadables/SamuelMarriage-CV.pdf" target="_blank" rel="noopener"> Download CV </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <footer class="footer container">
+        <p class="muted">
+          © <span id="year"></span> Samuel Marriage
+        </p>
+        <a class="accent" href="#">Back to Top &uarr;</a>
+      </footer>
+    </main>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
