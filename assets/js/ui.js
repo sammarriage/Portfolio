@@ -8,9 +8,12 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // Header: sits in the lead until scrolled past, then pins to the top.
   const header = document.querySelector(".header");
   const anchor = header?.closest(".header-anchor");
+  const toggle = document.querySelector(".nav-toggle");
+  const links = document.getElementById("navLinks");
+
+  // Header: in the lead until scrolled past, then pins to the top
   if (header && anchor && "IntersectionObserver" in window) {
     const sentinel = document.createElement("div");
     sentinel.className = "header-sentinel";
@@ -20,6 +23,10 @@
     const setStuck = (stuck) => {
       header.classList.toggle("stuck", stuck);
       anchor.style.height = stuck ? `${header.offsetHeight}px` : "";
+      if (!stuck && links && toggle) {
+        links.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
     };
 
     new IntersectionObserver(
@@ -28,9 +35,6 @@
     ).observe(sentinel);
   }
 
-  // Mobile nav toggle
-  const toggle = document.querySelector(".nav-toggle");
-  const links = document.getElementById("navLinks");
   if (!toggle || !links) return;
 
   const setOpen = (open) => {
