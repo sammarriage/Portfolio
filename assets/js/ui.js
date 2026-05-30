@@ -62,8 +62,20 @@
       if (!target) return;
 
       e.preventDefault();
-      const offset =
-        header?.classList.contains("stuck") ? header.offsetHeight + 12 : 0;
+
+      // The header pins to the top once you scroll below the lead, so on
+      // mobile we must offset by its *stuck* height — even if it isn't stuck
+      // yet at tap time — otherwise the pinned bar lands over the title.
+      const onMobile = window.matchMedia("(max-width: 720px)").matches;
+      let offset = 0;
+      if (header?.classList.contains("stuck")) {
+        offset = header.offsetHeight + 12;
+      } else if (onMobile) {
+        header?.classList.add("stuck");
+        offset = (header?.offsetHeight || 0) + 12;
+        header?.classList.remove("stuck");
+      }
+
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: scrollBehavior });
     });
