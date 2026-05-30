@@ -252,9 +252,14 @@
 @media (max-width: 720px) {
   .section { padding: 44px 0; }
 
-  /* 2vw is tiny on phones — scale up the whole lead block (name + nav) */
-  .lead {
-    font-size: clamp(20px, 7vw, 34px);
+  /* Lead name + in-hero nav (explicit sizes — em/2vw stay too small on phones) */
+  .lead .headline {
+    font-size: clamp(2.75rem, 12vw, 3.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .lead .header:not(.stuck) .nav-links a {
+    font-size: clamp(0.8125rem, 3.6vw, 1rem);
   }
 
   .card { padding: 14px; border-radius: 16px; }
@@ -288,7 +293,6 @@
   .lead .header:not(.stuck) .nav-links a {
     padding: 0;
     border-radius: 0;
-    font-size: 0.5em;
   }
   .lead .header:not(.stuck) .nav-links a:hover {
     background: transparent;
