@@ -249,6 +249,21 @@
   .contact-grid  { grid-template-columns: 1fr; }
 }
 
+/* Lead name + in-hero nav, mid widths (landscape phones / small tablets).
+   The hero's em/2vw scaling is sized for full-width desktop; between the
+   720px phone rules and this 980px layout breakpoint it collapses the nav
+   to ~6px. Give the lead explicit, readable sizes across this band too. */
+@media (min-width: 721px) and (max-width: 980px) {
+  .lead .headline {
+    font-size: clamp(2.75rem, 6.5vw, 3.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .lead .header:not(.stuck) .nav-links a {
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
+  }
+}
+
 @media (max-width: 720px) {
   .section { padding: 44px 0; }
 
