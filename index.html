@@ -6,36 +6,41 @@
     <title>Samuel Marriage | Engineering Portfolio</title>
     <meta name="description" content="Engineering portfolio" />
     <link rel="icon" type="image/png" href="./assets/PortfolioIcon.png">
-    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/tokens.css" />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/components.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
   </head>
 
   <body>
-    <!-- Background glow -->
-    <div class="bg-glow" aria-hidden="true"></div>
-
-    <!-- Top Nav -->
-    <header class="header">
-      <nav class="nav container" aria-label="Primary">
-        <a class="brand" href="#top" aria-label="Home">
-          <span class="brand-text">Samuel Marriage</span>
-        </a>
-
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="nav-toggle-lines" aria-hidden="true"></span>
-        </button>
-
-        <div id="navLinks" class="nav-links">
-          <a href="#">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a class="pill" href="#contact">Contact</a>
-        </div>
-      </nav>
-    </header>
-
     <main id="top">
+      <!-- Lead -->
+      <section id="lead" class="lead container">
+        <h1 class="headline">
+          Samuel Marriage
+        </h1>
+
+        <!-- Nav: in-flow at bottom of lead; pins to top once scrolled past -->
+        <div class="header-anchor">
+          <header class="header">
+            <nav class="nav container" aria-label="Primary">
+              <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="nav-toggle-lines" aria-hidden="true"></span>
+              </button>
+
+              <div id="navLinks" class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+              </div>
+            </nav>
+          </header>
+        </div>
+      </section>
+
       <!-- About -->
       <section id="about" class="about container">
         <div class="about-left">
@@ -512,6 +517,7 @@
       </footer>
     </main>
 
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script src="./assets/js/projects.js"></script>
   </body>
 </html>

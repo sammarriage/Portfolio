@@ -1,0 +1,131 @@
+/* ============================================================
+   COMPONENTS
+   Reusable, self-contained UI pieces: cards, buttons, tags,
+   chips, pills, callouts and the small card sub-parts.
+   ============================================================ */
+
+/* Card */
+.card {
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  min-width: 0;
+}
+.card__title {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+.card__row {
+  display: flex;
+  justify-content: right;
+  margin-top: 12px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--text);
+  font-weight: 650;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn:hover {
+  border-color: var(--btn-border-hover);
+  background: var(--btn-bg-hover);
+}
+.btn.primary {
+  border-color: var(--accent-line-hi);
+  background: var(--accent-fill);
+}
+.btn.primary:hover { background: var(--accent-fill-hi); }
+.btn.ghost { background: transparent; }
+.btn.small { padding: 10px 12px; border-radius: 12px; font-weight: 620; }
+
+/* Tag (small pill on project cards) */
+.tag {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--accent-line);
+  background: var(--accent-tint);
+  color: var(--text);
+}
+
+/* Pill (nav contact link) */
+.pill {
+  padding: 9px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--accent-line);
+  background: var(--accent-tint);
+  color: var(--text) !important;
+}
+
+/* Chips (skills lists) */
+.chips {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.chips li {
+  font-size: 13px;
+  color: var(--text-muted);
+  border: 1px solid var(--border-soft);
+  background: var(--surface-2);
+  padding: 8px 10px;
+  border-radius: var(--radius-pill);
+}
+
+/* Callout banner */
+.callout {
+  margin-top: 18px;
+  border: 1px solid rgb(var(--accent-rgb) / 0.25);
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  padding: 7px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.callout-buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+/* Expand / shrink button on project cards */
+.project-expand-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--accent-soft);
+  cursor: pointer;
+  margin-left: auto;
+}
+.project-expand-btn:hover { color: var(--text); text-decoration: underline; }
+
+/* Skills strip at the bottom of a project card */
+.skills-tab {
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px solid var(--border-soft);
+}
+.skills-tab p { margin: 0; font-size: 14px; color: var(--text-muted); }
+
+/* Small print under project media */
+.footnote { margin-top: 15px; }
+.footnote p { margin: 0; font-size: 12px; color: var(--text-muted); }
