@@ -252,6 +252,11 @@
 @media (max-width: 720px) {
   .section { padding: 44px 0; }
 
+  /* 2vw is tiny on phones — scale up the whole lead block (name + nav) */
+  .lead {
+    font-size: clamp(20px, 7vw, 34px);
+  }
+
   .card { padding: 14px; border-radius: 16px; }
 
   .projects-grid { gap: 12px; }
@@ -283,7 +288,7 @@
   .lead .header:not(.stuck) .nav-links a {
     padding: 0;
     border-radius: 0;
-    font-size: 0.4em;
+    font-size: 0.5em;
   }
   .lead .header:not(.stuck) .nav-links a:hover {
     background: transparent;
